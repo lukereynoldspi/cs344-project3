@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
-int main(void)
+int main(int argc, char *argv[])
 {
     char buf[2048];
 
@@ -12,16 +12,15 @@ int main(void)
     fgets(buf, sizeof buf, stdin);
 
     char *token;
-    char *s;
+    char *s[128];
     int i = 0;
     if ((token = strtok(buf, " \t\n\r")) != NULL) {
         do {
             printf("%s\n", token);
-            s = token;
-            printf("%s", s);
-          
-
+            s[i] = token;
+            i++;
         } while ((token = strtok(NULL, " \t\n\r")) != NULL);
     }
-
+    s[i] = '\0';
+    execvp(s[0], argv);
 }
