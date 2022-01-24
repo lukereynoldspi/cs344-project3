@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
                 i++;
             } while ((token = strtok(NULL, " \t\n\r")) != NULL);
         }
-        s[i] = '\0';
+        s[i] = NULL;
 
         /// Part 3
         if (strcmp(s[0], "cd") == 0) {
