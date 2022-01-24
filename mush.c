@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         /// Part 1
         char buf[2048];
 
-        printf("🔥Luke\'s Awesome Shell 🔥$ ");
+        printf("🔥 Luke\'s Awesome Shell 🔥$ ");
         fflush(stdout);
         fgets(buf, sizeof buf, stdin);
 
